@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const revealItems = document.querySelectorAll('[data-reveal]');
+  const skillTabs = document.querySelectorAll('.skills-tab');
+  const skillPanels = document.querySelectorAll('.skills-panel');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
@@ -63,5 +65,26 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.key === 'Escape' && navLinks) {
       navLinks.classList.remove('active');
     }
+  });
+
+  skillTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const targetId = tab.dataset.skillTarget;
+
+      skillTabs.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      skillPanels.forEach(function (panel) {
+        panel.classList.remove('active');
+      });
+
+      tab.classList.add('active');
+
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
   });
 });
