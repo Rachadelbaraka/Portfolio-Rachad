@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const revealItems = document.querySelectorAll('[data-reveal]');
   const skillTabs = document.querySelectorAll('.skills-tab');
   const skillPanels = document.querySelectorAll('.skills-panel');
-  const parcoursTabs = document.querySelectorAll('.parcours-tab');
-  const parcoursPanels = document.querySelectorAll('.parcours-panel');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
@@ -90,24 +88,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  parcoursTabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      const targetId = tab.dataset.storyTarget;
-
-      parcoursTabs.forEach(function (item) {
-        item.classList.remove('active');
-      });
-
-      parcoursPanels.forEach(function (panel) {
-        panel.classList.remove('active');
-      });
-
-      tab.classList.add('active');
-
-      const targetPanel = document.getElementById(targetId);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
-      }
-    });
-  });
 });

@@ -38,6 +38,7 @@
         <li><a href="#home">Accueil</a></li>
         <li><a href="#parcours">Parcours</a></li>
         <li><a href="#competences">Compétences</a></li>
+        <li><a href="#stage">Stage</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#e4">Dossier E4</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -96,48 +97,62 @@
         </div>
 
         <div class="parcours-wrap" data-reveal>
-          <div class="parcours-tabs" role="tablist" aria-label="Étapes du parcours">
-            <button class="parcours-tab active" type="button" data-story-target="story-1">1. Déclencheur</button>
-            <button class="parcours-tab" type="button" data-story-target="story-2">2. Premiers projets</button>
-            <button class="parcours-tab" type="button" data-story-target="story-3">3. Passage au niveau pro</button>
-            <button class="parcours-tab" type="button" data-story-target="story-4">4. Vision actuelle</button>
-          </div>
+          <div class="parcours-timeline" aria-label="Frise du parcours">
+            <article class="parcours-step" data-reveal>
+              <div class="parcours-step-badge">1</div>
+              <div class="parcours-step-content">
+                <p class="parcours-step-kicker">Déclencheur</p>
+                <h3>Comprendre ce qu'il y a derrière les jeux</h3>
+                <p>
+                  Petit, les jeux vidéo me fascinaient. J'ai voulu comprendre comment ils étaient construits, comment les mécaniques fonctionnaient et comment une idée devenait une expérience interactive.
+                </p>
+                <p>
+                  Ce réflexe de curiosité m'a conduit naturellement vers l'informatique, puis vers le développement.
+                </p>
+              </div>
+            </article>
 
-          <div class="parcours-panel active" id="story-1">
-            <h3>Le déclic: comprendre ce qu'il y a derrière les jeux</h3>
-            <p>
-              Petit, les jeux vidéo me fascinaient. J'ai voulu comprendre comment ils fonctionnaient, comment les règles, les mécaniques et les interactions étaient créées. Ce besoin de comprendre le "coulisses" m'a naturellement conduit vers l'informatique puis vers le code.
-            </p>
-          </div>
+            <article class="parcours-step" data-reveal>
+              <div class="parcours-step-badge">2</div>
+              <div class="parcours-step-content">
+                <p class="parcours-step-kicker">Premiers projets</p>
+                <h3>Apprendre en testant, casser puis reconstruire</h3>
+                <p>
+                  Je me suis lancé dans de nombreux projets à mes débuts: serveurs Minecraft que je développais, mods en Java, et d'autres expérimentations techniques.
+                </p>
+                <p>
+                  Cette phase m'a appris l'autonomie, la débrouille et surtout la persévérance: quand ça ne marche pas, on lit, on teste, on corrige, on progresse.
+                </p>
+              </div>
+            </article>
 
-          <div class="parcours-panel" id="story-2">
-            <h3>Les débuts: apprendre en construisant</h3>
-            <p>
-              Je me suis lancé dans plein de projets, souvent par passion: création et développement de serveurs Minecraft, modifications en Java, essais techniques variés. Ces expériences m'ont appris l'autonomie, la débrouille et l'importance de tester énormément pour progresser.
-            </p>
-            <p>
-              Une grande partie de ces expérimentations m'a permis de comprendre la logique du code, la notion d'architecture, et la valeur de la persévérance quand un projet ne fonctionne pas du premier coup.
-            </p>
-          </div>
+            <article class="parcours-step" data-reveal>
+              <div class="parcours-step-badge">3</div>
+              <div class="parcours-step-content">
+                <p class="parcours-step-kicker">Passage au niveau pro</p>
+                <h3>Structurer la passion avec le BTS SIO SLAM</h3>
+                <p>
+                  Le BTS m'a permis de transformer cette énergie en méthode: analyser un besoin, concevoir proprement, développer avec rigueur, sécuriser et documenter.
+                </p>
+                <p>
+                  Mes projets ne sont plus juste des essais personnels: ils sont pensés pour démontrer des compétences mobilisables dans un cadre professionnel.
+                </p>
+              </div>
+            </article>
 
-          <div class="parcours-panel" id="story-3">
-            <h3>Structurer la passion: BTS SIO SLAM</h3>
-            <p>
-              Avec le BTS SIO SLAM, j'ai transformé cet apprentissage intuitif en méthode professionnelle: analyse du besoin, conception, développement, gestion de données, cybersécurité, documentation, gestion de versions et présentation d'un travail propre.
-            </p>
-            <p>
-              Aujourd'hui, mes projets ne sont plus uniquement des tests personnels: ils servent de preuves concrètes de compétences mobilisées dans un cadre technique exigeant.
-            </p>
-          </div>
-
-          <div class="parcours-panel" id="story-4">
-            <h3>Ma ligne directrice aujourd'hui</h3>
-            <p>
-              Je veux continuer à construire des applications utiles, lisibles et robustes. Mon objectif est d'aller plus loin après le BTS, en gardant le même état d'esprit: apprendre vite, travailler sérieusement et livrer des projets dont je peux défendre chaque choix technique.
-            </p>
-            <p>
-              Vous retrouverez dans la section projets les réalisations qui matérialisent cette progression.
-            </p>
+            <article class="parcours-step" data-reveal>
+              <div class="parcours-step-badge">4</div>
+              <div class="parcours-step-content">
+                <p class="parcours-step-kicker">Vision actuelle</p>
+                <h3>Construire des projets solides, utiles et défendables</h3>
+                <p>
+                  Aujourd'hui, ma priorité est de livrer des applications lisibles, maintenables et fiables. Je veux pouvoir justifier chaque choix technique devant un jury, un recruteur ou une équipe.
+                </p>
+                <p>
+                  La section Projets montre cette progression, du premier niveau d'expérimentation à une approche plus professionnelle du développement.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -232,6 +247,95 @@
               <p>Ces compétences sont celles qui font la différence entre un simple exécutant et un étudiant capable de raisonner un projet. Je veux montrer que je sais relier technique, méthode, documentation et responsabilité.</p>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section-shell-muted" id="stage">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Stage</p>
+          <h2>Stage 2 - MoreFix: plateforme e-commerce et gestion intelligente du stock</h2>
+          <p>
+            Synthèse de mon deuxième stage de BTS SIO SLAM réalisé à Saint-Etienne chez MoreFix. L'objectif était de livrer une solution exploitable en entreprise: vente en ligne, administration du stock, sécurité et assistance IA.
+          </p>
+        </div>
+
+        <div class="stage-grid">
+          <article class="stage-card" data-reveal>
+            <h3>Contexte et besoin métier</h3>
+            <p>
+              MoreFix commercialise des produits high-tech reconditionnés avec plusieurs centaines de références. L'entreprise faisait face à un suivi de stock manuel, des risques de rupture et une absence de présence web moderne.
+            </p>
+            <ul>
+              <li>Inventaire non centralisé et erreurs humaines fréquentes</li>
+              <li>Pas d'alertes automatiques sur les seuils critiques</li>
+              <li>Pas de vitrine e-commerce pour développer les ventes</li>
+            </ul>
+          </article>
+
+          <article class="stage-card" data-reveal>
+            <h3>Solution livrée</h3>
+            <p>
+              J'ai conçu une plateforme complète en deux volets: une vitrine e-commerce et un panel d'administration pour piloter le stock en temps réel.
+            </p>
+            <ul>
+              <li>Gestion CRUD produits, catégories et fournisseurs</li>
+              <li>Tableau de bord d'administration sécurisé</li>
+              <li>Recherche, filtrage et visualisation des stocks</li>
+            </ul>
+          </article>
+
+          <article class="stage-card" data-reveal>
+            <h3>Architecture technique</h3>
+            <p>
+              Le projet a évolué vers une architecture moderne orientée performance et maintenabilité.
+            </p>
+            <div class="stage-tags" aria-label="Stack technique">
+              <span>Next.js</span>
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>Tailwind CSS</span>
+              <span>Firebase Auth</span>
+              <span>Realtime Database</span>
+              <span>Netlify</span>
+              <span>React Hook Form + Zod</span>
+            </div>
+          </article>
+
+          <article class="stage-card" data-reveal>
+            <h3>Module IA / NLP</h3>
+            <p>
+              Un chatbot IA a été intégré pour interroger le stock en langage naturel et accélérer la prise de décision.
+            </p>
+            <ul>
+              <li>Questions de stock faible, quantité et valeur d'inventaire</li>
+              <li>Prétraitement texte, extraction d'intentions, pattern matching</li>
+              <li>Réponses contextuelles connectées aux données temps réel</li>
+            </ul>
+          </article>
+
+          <article class="stage-card" data-reveal>
+            <h3>Qualité, sécurité et accessibilité</h3>
+            <ul>
+              <li>Validation multi-niveaux: client, TypeScript, API, base</li>
+              <li>Routes admin protégées et gestion de session</li>
+              <li>Tests fonctionnels CRUD + scénarios chatbot</li>
+              <li>Conformité WCAG 2.1 AA et interface responsive</li>
+            </ul>
+          </article>
+
+          <article class="stage-card" data-reveal>
+            <h3>Apports pro et lecture E4</h3>
+            <p>
+              Ce stage m'a fait passer d'une logique de projet scolaire à une logique de livraison professionnelle: modéliser avant de coder, documenter, sécuriser et justifier chaque choix.
+            </p>
+            <ul>
+              <li><strong>Bloc 1:</strong> présence numérique et support d'exploitation</li>
+              <li><strong>Bloc 2:</strong> conception, développement, données, tests</li>
+              <li><strong>Bloc 3:</strong> sécurité applicative et contrôle des accès</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
