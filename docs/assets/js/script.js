@@ -1,100 +1,67 @@
-// Portfolio Interactivity
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
+  const revealItems = document.querySelectorAll('[data-reveal]');
 
-  if (navToggle) {
-    navToggle.addEventListener('click', function() {
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
       navLinks.classList.toggle('active');
     });
 
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function() {
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
         navLinks.classList.remove('active');
       });
     });
   }
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (event) {
+      const targetSelector = this.getAttribute('href');
+      const target = document.querySelector(targetSelector);
+      if (!target) {
+        return;
       }
+
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     });
   });
 
-  // Fade in on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+  const revealObserver = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+        const element = entry.target;
+        const delay = Number(element.dataset.delay || 0);
+        window.setTimeout(function () {
+          element.classList.add('in');
+        }, delay);
 
-  document.querySelectorAll('.project-card, .skill-card, .bloc-card').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Analytics event tracking
-  document.querySelectorAll('.btn, .project-links a').forEach(btn => {
-    btn.addEventListener('click', function() {
-      if (window.gtag) {
-        gtag('event', 'click', {
-          'event_category': 'engagement',
-          'event_label': this.textContent,
-          'value': 1
-        });
-      }
-    });
-  });
-
-  // Keyboard shortcuts
-  document.addEventListener('keydown', function(e) {
-    // Ctrl/Cmd + K for search (future feature)
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      console.log('Search triggered');
+        observer.unobserve(element);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: '0px 0px -50px 0px'
     }
+  );
 
-    // Esc to close mobile menu
-    if (e.key === 'Escape' && navLinks) {
+  revealItems.forEach(function (item, index) {
+    // Small staggered reveal for a premium page-load effect.
+    item.dataset.delay = String((index % 6) * 80);
+    revealObserver.observe(item);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && navLinks) {
       navLinks.classList.remove('active');
     }
   });
-
-  // Dark mode toggle (optional)
-  const darkModeToggle = document.querySelector('[data-toggle-dark-mode]');
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', function() {
-      document.documentElement.getAttribute('data-theme') === 'dark' ?
-        document.documentElement.removeAttribute('data-theme') :
-        document.documentElement.setAttribute('data-theme', 'dark');
-    });
-  }
-
-  console.log('Portfolio loaded successfully!');
 });
-
-// Utility function to detect if element is in viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
