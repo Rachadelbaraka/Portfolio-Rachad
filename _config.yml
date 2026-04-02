@@ -1,0 +1,24 @@
+# GitHub Pages Configuration
+
+theme: null
+remote_theme: null
+markdown: kramdown
+kramdown:
+  hard_wrap: false
+  parse_block_html: true
+
+# Exclude files from GitHub Pages build
+exclude:
+  - .git
+  - .gitignore
+  - README.md
+  - projets/
+  - documentation/
+  - certifications/
+  - apprentissage/
+  - cv/
+  - node_modules/
+  - '*.rb'
+  - Gemfile
+  - Gemfile.lock
+  - .DS_Store

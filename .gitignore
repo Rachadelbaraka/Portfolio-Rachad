@@ -1,0 +1,126 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.prod
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Build outputs
+/dist
+/build
+/.next
+out/
+*.tgz
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Compiled files
+*.o
+*.so
+*.a
+*.dylib
+*.deb
+*.rpm
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+local.db
+
+# Private keys & secrets
+*.pem
+*.key
+*.jks
+private/
+secrets/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.cache/
+
+# CI/CD
+.github/workflows/secrets.yml
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Node
+npm-debug.log
+
+# System
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode-test/
+.history/
+
+# Misc
+.wistia/
+.heap/

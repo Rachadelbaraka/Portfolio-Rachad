@@ -1,0 +1,40 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Check links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-allowlist: 'yes'
+
+    - name: Validate HTML
+      run: |
+        if ! command -v html5-validator &> /dev/null; then
+          pip install html5-validator
+        fi
+        html5-validator docs/index.html || true
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: actions/upload-artifact@v3
+      with:
+        name: portfolio-site
+        path: docs/
+
+    - name: Create deployment
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: |
+        echo "✅ Portfolio déployé sur GitHub Pages"
+        echo "Accessible sur: https://${{ github.repository_owner }}.github.io/Portfolio-Rachad"
