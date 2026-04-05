@@ -1,4 +1,4 @@
-# 👋 Portfolio Technique | Rachad Hammani
+# 👋 Portfolio Technique | Rachad EL BARAKA
 
 > Étudiant en **BTS SIO SLAM** (Session 2026) | Full-Stack Developer en formation | Passionné par l'architecture logicielle et la cybersécurité
 
